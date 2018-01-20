@@ -1,0 +1,54 @@
+.site-header
+  position: absolute
+  z-index: 3
+  display: flex
+  justify-content: space-between
+  height: 60px
+  .nav-items, .logo
+    height: 60px
+    display: flex
+    flex-direction: column
+    justify-content: center
+  .logo a
+    margin: 0
+    color: var(--white-color)
+  a
+    text-transform: uppercase
+    color: var(--primary-color)
+    text-decoration: none
+    margin-left: 25px
+    position: relative
+    &:first-child
+      margin-left: 0px
+    &:hover span
+      opacity: .1
+    &.active-page span
+      opacity: .2
+    span
+      position: absolute
+      transition: .3s
+      z-index: -1
+      width: 30px
+      height: 30px
+      border: 2px solid var(--primary-color)
+      background: var(--secondary-color)
+      border-radius: 50%
+      opacity: 0
+      margin: auto
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      &:after
+        display: block
+        content: ''
+        position: absolute
+        margin: auto
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        border-radius: 50%
+        width: 10px
+        height: 10px
+        background: var(--primary-color)

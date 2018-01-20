@@ -1,0 +1,73 @@
+.pad
+	@media(max-width: 1000px)
+		padding-left: 50px
+		padding-right: 50px
+	@media(max-width: 775px)
+		padding-left: 20px
+		padding-right: 20px
+	@media(max-width: 340px)
+		padding-left: 10px
+		padding-right: 10px
+
+.w-100-percent
+	width: 100%
+.mw-1000-px
+	max-width: 1000px 
+	&.center-container
+		margin: auto 
+
+.btn
+	padding: 10px 30px
+	text-decoration: none
+	position: relative
+	span
+		transition: .3s
+	&:before
+		content: ''
+		position: absolute
+		display: block
+		z-index: -1
+		transition: .3s
+		width: 100%
+		height: 0%
+		bottom: 0
+		left: 0
+	&:hover:before
+		height: 100%
+
+.btn-outline-secondary
+	border: 1px solid var(--secondary-color)
+	color: var(--secondary-color)
+	&:before
+		background-color: var(--secondary-color)
+	&:hover
+		color: var(--white-color)
+.btn-link
+	color: var(--secondary-color)
+	position: relative
+	text-decoration: none
+	&:after
+		content: ''
+		position: absolute
+		display: block
+		transition: .3s
+		width: 30%
+		height: 2px
+		bottom: 0
+		left: 0
+		background-color: var(--secondary-color)
+	&:hover:after
+		width: 100%
+
+.bgc-primary
+	background-color: var(--primary-color)
+.bgc-secondary
+	background-color: var(--secondary-color)
+.bgc-dark
+	background-color: var(--dark-color)
+.bgc-light
+	background-color: var(--light-color)
+.bgc-white
+	background-color: var(--white-color)
+.bgc-black
+	background-color: var(--black-color)

@@ -1,0 +1,14 @@
+name: Jovan Savic
+title: Jovan Savic | UI/UX Designer
+# Social Networks
+instagram-link: https://www.instagram.com/__savke/
+facebook-link: https://www.facebook.com/jovan.saviic
+twitter-link: https://twitter.com/jovan_savic1
+behance-link: https://www.behance.net/jovansavic
+github-link: https://github.com/johnofficial/
+
+baseurl:
+markdown: redcarpet
+highlighter: pygments # or rouge or null
+exclude: ["node_modules", "gulpfile.js", "package.json"]
+include: ["_pages"]

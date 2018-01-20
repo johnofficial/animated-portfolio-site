@@ -1,0 +1,11 @@
+<header class="container-fluid site-header">
+  <div class="logo"><a href="{{site.baseurl}}/">J.S</a></div>
+  <nav class="nav-items">
+    <div>
+      <a href="{{site.baseurl}}/" class="{% if page.url =='/' %}active-page{% endif %}"><span></span>WELCOME</a>
+      <a href="{{site.baseurl}}/about/" class="{% if page.url =='/about/' %}active-page{% endif %}"><span></span>ABOUT</a>
+      <a href="{{site.baseurl}}/portfolio/" class="{% if page.url =='/portfolio/' %}active-page{% endif %}"><span></span>PORTFOLIO</a>
+      <a href="{{site.baseurl}}/contact/" class="{% if page.url =='/contact/' %}active-page{% endif %}"><span></span>CONTACT</a>
+    </div>
+  </nav>
+</header>
