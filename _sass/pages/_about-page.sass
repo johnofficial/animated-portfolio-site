@@ -1,0 +1,19 @@
+.about-page
+  .title-section
+    background-image: url(../img/about-image.png)
+    background-size: cover
+    background-position: center
+    filter: blur(5px)
+    transition: 3s
+    &.active
+      filter: blur(0px)
+    .title-background
+      opacity: 0.1
+      width: 100%
+  h1
+    text-align: left
+
+@media (max-width: 767px)
+  .about-page
+    .title-section
+      background-position: top

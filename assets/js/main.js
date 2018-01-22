@@ -31,14 +31,9 @@ function changePageAnimation() {
 
 
 function mobileMenu(){
-  $(".mobile-nav-toggle").on('click', function(){
-    var status = $(this).hasClass('is-open');
-    if(status){
-      $(".mobile-nav-toggle, .mobile-header").removeClass("is-open");
-    }else{
-      $(".mobile-nav-toggle, .mobile-header").addClass("is-open");
-    }
-});
+  $(".menu-toggle").on('click', function(){
+  	$(".mobile-nav-items, .menu-toggle, .logo a").toggleClass("open");
+  });
 }
 
 /* Ajax Contact Form */

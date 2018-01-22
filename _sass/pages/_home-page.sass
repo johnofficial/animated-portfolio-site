@@ -1,5 +1,6 @@
 .container-fluid.home-page
   margin: 0
+  overflow: hidden
 
 .title-section
   height: calc(100vh - 60px)
@@ -10,9 +11,8 @@
   align-items: center
   justify-content: center
   transition: .6s
-  div
+  .title-background
     position: absolute
-    z-index: -1
     left: 0px
     top: 0px
     height: 100%
@@ -23,99 +23,100 @@
   h1
     color: var(--white-color)
     font-size: 84px
-.home-page
-  .decription-section
-    position: relative
+    z-index: 2
+.decription-section
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  height: calc(100vh - 60px)
+  .profile-container
+    position: absolute
+    overflow: hidden
+    height: 70px
+    bottom: 15px
+    right: 15px
+    padding: 5px 10px
+    background: var(--white-color)
+    border-radius: 3px
+    transition: .3s
+    &.active
+      box-shadow: 0px 3px 6px rgba(0,0,0,0.16)
+      width: 250px
+  .social-profiles
     display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-    height: calc(100vh - 60px)
-    .profile-container
-      position: absolute
-      overflow: hidden
-      height: 70px
-      bottom: 15px
-      right: 15px
-      padding: 5px 10px
-      background: var(--white-color)
-      border-radius: 3px
+    position: absolute
+    justify-content: space-between
+    width: 150px
+    transition: .3s
+    margin-top: 10px
+    right: -150px
+    opacity: 0
+    &.active
+      right: 90px
+      opacity: 1
+    svg
       transition: .3s
-      &.active
-        box-shadow: 0px 3px 6px rgba(0,0,0,0.16)
-        width: 250px
-    .social-profiles
-      display: flex
-      position: absolute
-      justify-content: space-between
-      width: 150px
-      transition: .3s
-      margin-top: 10px
-      right: -150px
-      opacity: 0
-      &.active
-        right: 90px
-        opacity: 1
-      svg
+      margin: 0 5px
+      width: 40px
+      height: 40px
+      path
+        fill: var(--dark-color)
         transition: .3s
-        margin: 0 5px
-        width: 40px
-        height: 40px
-        path
-          fill: var(--dark-color)
-          transition: .3s
-        &:hover path
-          fill: var(--primary-color)
-    .profile-image
-      z-index: 3
-      float: right
-      width: 60px
-      height: 60px
-      border-radius: 50%
-      background-image: url("../img/profile-img.png")
-      background-position: center
-      background-repeat: no-repeat
-      background-size: cover
-      transition: .3s
-      &.active
-        filter: blur(2px)
-    h2
-      font-size: 16px
-      font-weight: 300
-      strong
-        font-size: 32px
-    p
-      max-width: 380px
-      margin-bottom: 30px
-      transition: .9s
+      &:hover path
+        fill: var(--primary-color)
+  .profile-image
+    z-index: 3
+    float: right
+    width: 60px
+    height: 60px
+    border-radius: 50%
+    background-image: url("../img/profile-img.png")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    transition: .3s
+    &.active
       filter: blur(2px)
-      transform: skewX(-45deg) translateX(1000px)
-      animation: 3s .3s ease-in-out 1 forwards
-      &.active
-        animation-name: homePageAnimation
+  h2
+    font-size: 16px
+    font-weight: 300
+    strong
+      font-size: 32px
+  .text
+    max-width: 380px
+    margin-bottom: 30px
+    transition: .9s
+    filter: blur(2px)
+    transform: skewX(-45deg) translateX(1000px)
+    animation: 3s .3s ease-in-out 1 forwards
+    &.active
+      animation-name: homePageAnimation
 
 
-    .btn-link
-      margin-left: 40px
-    .btn-link, .btn
-      opacity: 0
-      transform: scale(0)
-      animation: 3s .6s ease-in-out 1 forwards
-      &.active
-        animation-name: buttonAnimation
+  .btn-link
+    margin-left: 40px
+  .btn-link, .btn
+    opacity: 0
+    transform: scale(0)
+    animation: 3s .6s ease-in-out 1 forwards
+    &.active
+      animation-name: buttonAnimation
 
 
 
 
 @media (max-width: 767px)
-  .home-page
-    .title-section,
-    .decription-section
-      height: calc(50vh - 30px)
+  .title-section,
+  .decription-section
+    height: calc(50vh - 30px)
   .profile-image
     display: none
 
-
+@media (max-width: 480px)
+  .title-section h1
+    font-size: 48px
 
 
 // Animations

@@ -1,0 +1,167 @@
+.portfolio-page
+  .title-section
+    h1
+      text-align: left
+      line-height: 86px
+      margin-bottom: 30px
+.title-section-wrap
+  z-index: 2
+.project-thumbnail
+  width: 300px
+  height: 200px
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  transition: .3s
+  &:hover
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16)
+    transform: scale(1.05)
+.project-wrap
+  transition: .5s
+  transition-delay: .7s
+  opacity: 0
+  transform: scale(0)
+  &.active
+    opacity: 1
+    transform: scale(1)
+  .btn-link
+    float: left
+    color: var(--dark-color)
+    &:after
+      background: var(--dark-color)
+  h3
+    text-align: left
+    font-size: 32px
+    font-weight: 300
+    margin-top: 10px
+    margin-bottom: 10px
+
+.projects-loop
+  margin-top: 60px
+  width: 100%
+  overflow: auto
+  &::-webkit-scrollbar
+    display: none
+  a
+    text-decoration: none
+.project
+  width: 90%
+  display: flex
+  margin: 10px auto
+  transition: .3s
+  box-sizing: border-box
+  &:hover
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.16)
+  .thumbnail
+    flex-shrink: 0
+    max-width: 50%
+    width: 210px
+    height: 140px
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+  .text-wrap
+    padding: 5px 10px
+    position: relative
+    overflow: hidden
+    strong
+      font-size: 12px
+    h2
+      color: var(--primary-color)
+      margin: 0
+      font-size: 20px
+      @media (max-width: 1000px)
+        font-size: 16px
+    .description
+      transition: .3s
+      opacity: 0
+      padding: 5px 10px
+      position: absolute
+      right: -100%
+      top: 0
+      width: 100%
+      height: 100%
+      background: var(--white-color)
+      p
+        margin: 0
+        font-size: 14px
+    &:hover .description
+      opacity: 1
+      right: 0
+    &.read .description
+      opacity: 1
+      right: 0
+.explanation
+  display: none
+@media (max-width: 767px)
+  .portfolio-page
+    .title-section-wrap
+      margin-top: 70px
+      display: flex
+      justify-content: space-between
+      width: 100%
+      .project-wrap
+        width: 240px
+        .project-thumbnail
+          width: 240px
+          height: 160px
+        h3
+          font-size: 20px
+
+      h1
+        font-size: 48px
+        line-height: 52px
+        margin: 0
+        max-width: 45%
+    .decription-section
+      flex-wrap: wrap
+      justify-content: flex-start
+      padding-top: 40px
+
+  .projects-loop
+    margin-top: 0
+    width: 80%
+  .project
+    width: 100%
+    margin: 10px 0px
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.16)
+  .explanation
+    align-self: flex-start
+    width: 20%
+    display: block
+    float: left
+    p
+      opacity: 0.5
+
+
+@media (max-width: 767px)
+  .portfolio-page
+    .title-section-wrap
+      .project-wrap
+        width: 50%
+        .project-thumbnail
+          width: 150px
+          height: 100px
+      h1
+        font-size: 26px
+        line-height: 32px
+    .decription-section
+      flex-wrap: nowrap
+      padding-top: 0
+  .projects-loop, .explanation
+    width: 100%
+  .project
+    .thumbnail
+      width: 150px
+      height: 100px
+    .text-wrap
+      h2
+        font-size: 13px
+      .description
+        p
+          font-size: 12px
+  .explanation
+    h3
+      margin-bottom: 0
+    p
+      margin: 0

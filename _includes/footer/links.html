@@ -1,5 +1,10 @@
 <script src="{{site.baseurl}}/assets/js/jquery-3.1.0.min.js" ></script>
+{% if page.javascript_name == "portfolio" %}
+<script src="{{site.baseurl}}/assets/js/swipe.js" ></script>
+{% endif %}
+
 <script src="{{site.baseurl}}/assets/js/main.js"></script>
+
 {% if page.javascript_name %}
   <script src="{{site.baseurl}}/assets/js/{{page.javascript_name}}.js"></script>
 {% endif %}
