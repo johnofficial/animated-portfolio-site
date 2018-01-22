@@ -10,12 +10,15 @@ permalink: /portfolio/
         <div class="col-md-6 title-section" animate>
             <div class="title-background bgc-secondary" animate></div>
             <div class="title-section-wrap">
-                <h1>My newest<br>project</h1>
+                <h1>My latest<br>project</h1>
 
                 <div class="project-wrap" animate>
-                    <div class="project-thumbnail" style="background-image: url('{{site.baseurl}}/assets/img/about-image.png')"></div>
-                    <h3>Realestate landing page</h3>
-                    <a href="{{site.baseurl}}/portfolio/landing-page" class="btn-link" animate>View project</a>
+                    {% assign sorted_projects = (site.projects | sort: 'place') | reverse %}
+                    {% for project in sorted_projects limit: 1 %}
+                    <div class="project-thumbnail" style="background-image: url('{{site.baseurl}}/assets/img/project-thumbnails/{{project.thumbnail}}')"></div>
+                    <h3>{{project.name}}</h3>
+                    <a href="{{site.baseurl}}{{project.url}}" class="btn-link" animate>View project</a>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -26,66 +29,19 @@ permalink: /portfolio/
                 <p>(Slide project to left to read quick description.)</p>
             </div>
             <div class="projects-loop">
-                <a href="">
-                <div class="project read" data-project-number="1">
-                    <div class="thumbnail" style="background-image: url('{{site.baseurl}}/assets/img/about-image.png')"></div>
+                {% assign sorted_projects = (site.projects | sort: 'place') | reverse %}
+                {% for project in sorted_projects %}
+                <a href="{{site.baseurl}}{{project.url}}" animate-delay>
+                <div class="project" data-project-number="1">
+                    <div class="thumbnail" style="background-image: url('{{site.baseurl}}/assets/img/project-thumbnails/{{project.thumbnail}}')"></div>
                     <div class="text-wrap">
-                        <strong>UI/UX Design</strong>
-                        <h2>Coming Soon for MS Wood Shop lorem ipsum dolor statement</h2>
-                        <div class="description"><p>The client wanted to present his gym on the internet and that users can make an online reservation for consultation.</p></div>
+                        <strong>{{project.tag}}</strong>
+                        <h2>{{project.name}}</h2>
+                        <div class="description"><p>{{project.description}}</p></div>
                     </div>
                 </div>
                 </a>
-                <a href="">
-                    <div class="project" data-project-number="1">
-                        <div class="thumbnail" style="background-image: url('{{site.baseurl}}/assets/img/about-image.png')"></div>
-                        <div class="text-wrap">
-                            <strong>UI/UX Design</strong>
-                            <h2>Coming Soon for MS Wood Shop lorem ipsum dolor statement</h2>
-                            <div class="description"><p>The client wanted to present his gym on the internet and that users can make an online reservation for consultation.</p></div>
-                        </div>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="project" data-project-number="1">
-                        <div class="thumbnail" style="background-image: url('{{site.baseurl}}/assets/img/about-image.png')"></div>
-                        <div class="text-wrap">
-                            <strong>UI/UX Design</strong>
-                            <h2>Coming Soon for MS Wood Shop lorem ipsum dolor statement</h2>
-                            <div class="description"><p>The client wanted to present his gym on the internet and that users can make an online reservation for consultation.</p></div>
-                        </div>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="project" data-project-number="1">
-                        <div class="thumbnail" style="background-image: url('{{site.baseurl}}/assets/img/about-image.png')"></div>
-                        <div class="text-wrap">
-                            <strong>UI/UX Design</strong>
-                            <h2>Coming Soon for MS Wood Shop lorem ipsum dolor statement</h2>
-                            <div class="description"><p>The client wanted to present his gym on the internet and that users can make an online reservation for consultation.</p></div>
-                        </div>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="project" data-project-number="1">
-                        <div class="thumbnail" style="background-image: url('{{site.baseurl}}/assets/img/about-image.png')"></div>
-                        <div class="text-wrap">
-                            <strong>UI/UX Design</strong>
-                            <h2>Coming Soon for MS Wood Shop lorem ipsum dolor statement</h2>
-                            <div class="description"><p>The client wanted to present his gym on the internet and that users can make an online reservation for consultation.</p></div>
-                        </div>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="project" data-project-number="1">
-                        <div class="thumbnail" style="background-image: url('{{site.baseurl}}/assets/img/about-image.png')"></div>
-                        <div class="text-wrap">
-                            <strong>UI/UX Design</strong>
-                            <h2>Coming Soon for MS Wood Shop lorem ipsum dolor statement</h2>
-                            <div class="description"><p>The client wanted to present his gym on the internet and that users can make an online reservation for consultation.</p></div>
-                        </div>
-                    </div>
-                </a>
+                {% endfor %}
 
             </div>
         </div>

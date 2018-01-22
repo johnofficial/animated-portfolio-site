@@ -365,6 +365,7 @@ body {
   transition: .6s; }
   .title-section .title-background {
     position: absolute;
+    background-image: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
     left: 0px;
     top: 0px;
     height: 100%;
@@ -592,7 +593,7 @@ body {
       background: var(--dark-color); }
   .project-wrap h3 {
     text-align: left;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 300;
     margin-top: 10px;
     margin-bottom: 10px; }
@@ -600,11 +601,21 @@ body {
 .projects-loop {
   margin-top: 60px;
   width: 100%;
-  overflow: auto; }
+  overflow: auto;
+  overflow-x: hidden; }
   .projects-loop::-webkit-scrollbar {
     display: none; }
   .projects-loop a {
-    text-decoration: none; }
+    display: block;
+    opacity: 0;
+    text-decoration: none;
+    -webkit-transform: translateX(1000px) skewY(45deg);
+            transform: translateX(1000px) skewY(45deg);
+    transition: .6s; }
+    .projects-loop a.active {
+      -webkit-transform: translateX(0) skewY(0deg);
+              transform: translateX(0) skewY(0deg);
+      opacity: 1; }
 
 .project {
   width: 90%;
@@ -612,9 +623,11 @@ body {
   display: flex;
   margin: 10px auto;
   transition: .3s;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  opacity: 0.6; }
   .project:hover {
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16); }
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+    opacity: 1; }
   .project .thumbnail {
     -ms-flex-negative: 0;
         flex-shrink: 0;
@@ -625,6 +638,7 @@ body {
     background-repeat: no-repeat;
     background-position: center; }
   .project .text-wrap {
+    width: 50%;
     padding: 5px 10px;
     position: relative;
     overflow: hidden; }
@@ -717,14 +731,25 @@ body {
     padding-top: 0; }
   .projects-loop, .explanation {
     width: 100%; }
-  .project .thumbnail {
-    width: 150px;
-    height: 100px; }
-  .project .text-wrap h2 {
-    font-size: 13px; }
-  .project .text-wrap .description p {
-    font-size: 12px; }
+  .project {
+    opacity: 1; }
+    .project .thumbnail {
+      width: 150px;
+      height: 100px; }
+    .project .text-wrap h2 {
+      font-size: 13px; }
+    .project .text-wrap .description p {
+      font-size: 12px; }
   .explanation h3 {
     margin-bottom: 0; }
   .explanation p {
     margin: 0; } }
+
+@media (max-width: 340px) {
+  .portfolio-page .title-section-wrap .project-wrap {
+    width: 50%; }
+    .portfolio-page .title-section-wrap .project-wrap .project-thumbnail {
+      width: 120px;
+      height: 80px; }
+    .portfolio-page .title-section-wrap .project-wrap h3 {
+      font-size: 14px; } }

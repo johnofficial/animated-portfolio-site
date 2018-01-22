@@ -1,8 +1,19 @@
 $(window).on("load", function () {
     setTimeout(triggerAnimations, 1500);
+    setTimeout(trigerProjectsAnimations, 2500);
     function triggerAnimations() {
         $("[animate]").addClass("active");
         console.log("Animation trigered")
+    }
+    function trigerProjectsAnimations() {
+        $("[animate-delay]").each(function (i) {
+            var $this = $(this);
+            setTimeout(function () {
+                $this.addClass("active");
+            }, i * 300);
+        })
+
+
     }
 });
 
