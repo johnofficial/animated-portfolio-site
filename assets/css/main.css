@@ -286,8 +286,9 @@ body {
   position: relative;
   transition: 1s; }
   .main-container.change-page {
-    -webkit-filter: blur(5px);
-            filter: blur(5px); }
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    opacity: 0; }
 
 .loader-container {
   width: 100%;

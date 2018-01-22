@@ -10,11 +10,11 @@ $(window).on("load", function() {
 });
 
 $(function() {
-window.scrollBy(0, -1);
-mobileMenu();
-//scrollMenu();
-contactForm();
-changePageAnimation();
+	window.scrollBy(0, -1);
+	mobileMenu();
+	//scrollMenu();
+	contactForm();
+	changePageAnimation();
 });
 
 function changePageAnimation() {
