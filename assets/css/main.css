@@ -365,7 +365,6 @@ body {
   transition: .6s; }
   .title-section .title-background {
     position: absolute;
-    background-image: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
     left: 0px;
     top: 0px;
     height: 100%;
