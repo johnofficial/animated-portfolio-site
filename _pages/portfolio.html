@@ -15,9 +15,11 @@ permalink: /portfolio/
                 <div class="project-wrap" animate>
                     {% assign sorted_projects = (site.projects | sort: 'place') | reverse %}
                     {% for project in sorted_projects limit: 1 %}
+
                     <div class="project-thumbnail" style="background-image: url('{{site.baseurl}}/assets/img/project-thumbnails/{{project.thumbnail}}')"></div>
                     <h3>{{project.name}}</h3>
                     <a href="{{site.baseurl}}{{project.url}}" class="btn-link" animate>View project</a>
+
                     {% endfor %}
                 </div>
             </div>
@@ -31,6 +33,7 @@ permalink: /portfolio/
             <div class="projects-loop">
                 {% assign sorted_projects = (site.projects | sort: 'place') | reverse %}
                 {% for project in sorted_projects %}
+                {% if forloop.first != true %}
                 <a href="{{site.baseurl}}{{project.url}}" animate-delay>
                 <div class="project" data-project-number="1">
                     <div class="thumbnail" style="background-image: url('{{site.baseurl}}/assets/img/project-thumbnails/{{project.thumbnail}}')"></div>
@@ -41,6 +44,7 @@ permalink: /portfolio/
                     </div>
                 </div>
                 </a>
+                {% endif %}
                 {% endfor %}
 
             </div>
