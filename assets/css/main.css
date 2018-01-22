@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6, p, b, li, strong, a {
 body {
   padding: 0;
   margin: 0;
-  --primary-color: #0703A6;
+  --primary-color: #0e38b1;
   --secondary-color: #B23D20;
   --dark-color: #333333;
   --light-color: #F7F7F7;
@@ -294,6 +294,7 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
+  margin: auto;
   background: var(--white-color);
   z-index: 999;
   display: -ms-flexbox;
@@ -303,24 +304,27 @@ body {
   transition: .9s;
   -ms-flex-pack: center;
       justify-content: center; }
+  .loader-container .loader-wrap {
+    max-width: 260px;
+    margin: auto; }
   .loader-container h1 {
-    font-size: 84px;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 300;
     text-align: center;
-    color: var(--white-color);
-    -webkit-text-stroke: 1px var(--primary-color);
-    text-shadow: 10px 5px rgba(0, 0, 0, 0.22);
+    color: var(--dark-color);
     margin: 0px 0px 10px; }
   .loader-container .loader {
-    width: 300px;
+    width: 260px;
     height: 5px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--dark-color);
     overflow: hidden;
     margin: auto; }
     .loader-container .loader span {
       display: block;
       width: 40%;
       height: 100%;
-      background: var(--primary-color);
+      background: var(--dark-color);
       -webkit-animation: loaderAnimation 2s infinite cubic-bezier(0.08, 0.54, 0.24, 1.02);
               animation: loaderAnimation 2s infinite cubic-bezier(0.08, 0.54, 0.24, 1.02); }
 
@@ -534,26 +538,32 @@ body {
     -webkit-transform: scale(1);
             transform: scale(1); } }
 
-.about-page .title-section {
-  background-image: url(../img/about-image.png);
-  background-size: cover;
-  background-position: center;
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
-  transition: 3s; }
-  .about-page .title-section.active {
-    -webkit-filter: blur(0px);
-            filter: blur(0px); }
-  .about-page .title-section .title-background {
-    opacity: 0.1;
-    width: 100%; }
-
-.about-page h1 {
-  text-align: left; }
+.about-page {
+  overflow: hidden; }
+  .about-page .title-section {
+    background-image: url(../img/about-image.png);
+    background-size: cover;
+    background-position: center;
+    transition: 3s;
+    opacity: 0;
+    -webkit-transform: translate(-50%);
+            transform: translate(-50%); }
+    .about-page .title-section.active {
+      opacity: 1;
+      -webkit-transform: translate(0%);
+              transform: translate(0%); }
+    .about-page .title-section .title-background {
+      opacity: 0.1;
+      width: 100%; }
+  .about-page h1 {
+    text-align: left; }
 
 @media (max-width: 767px) {
   .about-page .title-section {
     background-position: top; } }
+
+.bgc-portfolio {
+  background-color: #0e38b1; }
 
 .portfolio-page .title-section h1 {
   text-align: left;
@@ -587,11 +597,12 @@ body {
             transform: scale(1); }
   .project-wrap .btn-link {
     float: left;
-    color: var(--dark-color); }
+    color: var(--white-color); }
     .project-wrap .btn-link:after {
-      background: var(--dark-color); }
+      background: var(--white-color); }
   .project-wrap h3 {
     text-align: left;
+    color: var(--white-color);
     font-size: 26px;
     font-weight: 300;
     margin-top: 10px;
@@ -623,10 +634,11 @@ body {
   margin: 10px auto;
   transition: .3s;
   box-sizing: border-box;
-  opacity: 0.6; }
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16); }
   .project:hover {
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
-    opacity: 1; }
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px); }
   .project .thumbnail {
     -ms-flex-negative: 0;
         flex-shrink: 0;
@@ -637,14 +649,19 @@ body {
     background-repeat: no-repeat;
     background-position: center; }
   .project .text-wrap {
-    width: 50%;
     padding: 5px 10px;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    background-color: var(--white-color); }
     .project .text-wrap strong {
-      font-size: 12px; }
+      font-family: "Open Sans";
+      font-weight: bold;
+      font-size: 10px;
+      color: var(--secondary-color); }
     .project .text-wrap h2 {
-      color: var(--primary-color);
+      color: var(--dark-color);
       margin: 0;
       font-size: 20px; }
       @media (max-width: 1000px) {

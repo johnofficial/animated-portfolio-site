@@ -1,3 +1,5 @@
+.bgc-portfolio
+  background-color: #0e38b1
 .portfolio-page
   .title-section
     h1
@@ -26,11 +28,12 @@
     transform: scale(1)
   .btn-link
     float: left
-    color: var(--dark-color)
+    color: var(--white-color)
     &:after
-      background: var(--dark-color)
+      background: var(--white-color)
   h3
     text-align: left
+    color: var(--white-color)
     font-size: 26px
     font-weight: 300
     margin-top: 10px
@@ -58,10 +61,10 @@
   margin: 10px auto
   transition: .3s
   box-sizing: border-box
-  opacity: 0.6
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.16)
   &:hover
-    box-shadow: 0px 0px 6px rgba(0,0,0,0.16)
-    opacity: 1
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16)
+    transform: translateY(-5px)
   .thumbnail
     flex-shrink: 0
     max-width: 50%
@@ -71,14 +74,18 @@
     background-repeat: no-repeat
     background-position: center
   .text-wrap
-    width: 50%
     padding: 5px 10px
     position: relative
     overflow: hidden
+    flex-grow: 1
+    background-color: var(--white-color)
     strong
-      font-size: 12px
+      font-family: "Open Sans"
+      font-weight: bold
+      font-size: 10px
+      color: var(--secondary-color)
     h2
-      color: var(--primary-color)
+      color: var(--dark-color)
       margin: 0
       font-size: 20px
       @media (max-width: 1000px)
