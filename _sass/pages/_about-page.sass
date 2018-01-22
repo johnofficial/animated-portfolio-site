@@ -1,12 +1,15 @@
 .about-page
+  overflow: hidden
   .title-section
     background-image: url(../img/about-image.png)
     background-size: cover
     background-position: center
-    filter: blur(5px)
     transition: 3s
+    opacity: 0
+    transform: translate(-50%)
     &.active
-      filter: blur(0px)
+      opacity: 1
+      transform: translate(0%)
     .title-background
       opacity: 0.1
       width: 100%
