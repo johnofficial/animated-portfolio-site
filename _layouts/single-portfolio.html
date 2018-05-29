@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+   <title>{{site.title}} | {{ page.title }}</title>
+   <meta name="description" content="{{page.description}}">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+   {% include head/links.html %}
+   {% include head/social-meta.html %}
+ </head>
+ <body class="portfolio">
+   <div class="loader-container">
+    <div class="loader-wrap">
+     <h1>“Design is a funny word. Some people think design means how it looks. But of course, if you dig deeper, it’s really how it works.”</h1>
+     <div class="loader"><span></span></div>
+    </div>
+   </div>
+   {% include header/single-header.html %}
+   {{content}}
+   {% include footer/footer.html %}
+   {% include footer/links.html %}
+  </main>
+ </div>
+ </body>
+</html>

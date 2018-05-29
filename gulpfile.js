@@ -28,7 +28,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'sass_preloader', 'jekyll-build'], function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -50,6 +50,17 @@ gulp.task('sass', function () {
         .pipe(browserSync.reload({stream:true}))
         .pipe(gulp.dest('assets/css'));
 });
+gulp.task('sass_preloader', function () {
+    return gulp.src('_sass/preloader.sass')
+        .pipe(sass({
+            includePaths: ['sass'],
+            onError: browserSync.notify
+        }))
+        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(gulp.dest('_site/assets/css'))
+        .pipe(browserSync.reload({stream:true}))
+        .pipe(gulp.dest('assets/css'));
+});
 
 /**
  * Watch scss files for changes & recompile
@@ -57,7 +68,8 @@ gulp.task('sass', function () {
  */
 gulp.task('watch', function () {
     gulp.watch('_sass/**/*.sass', ['sass']);
-    gulp.watch(['*.html','_pages/*.html','_projects/*.md','_includes/**/*.html', '_layouts/*.html','assets/js/*.js', '_posts/*'], ['jekyll-rebuild']);
+    gulp.watch('_sass/**/*.sass', ['sass_preloader']);
+    gulp.watch(['*.html','_pages/*.html','_projects/*.md','_projects/*.html','_includes/**/*.html', '_layouts/*.html','assets/js/*.js', '_posts/*'], ['jekyll-rebuild']);
 });
 
 /**

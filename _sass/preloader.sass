@@ -1,0 +1,35 @@
+.loader-container
+  width: 100%
+  height: 100%
+  position: absolute
+  margin: auto
+  background: var(--white-color)
+  z-index: 999
+  display: flex
+  flex-direction: column
+  transition: .9s
+  justify-content: center
+  .loader-wrap
+    max-width: 260px
+    margin: auto
+  h1
+    font-size: 14px
+    font-style: italic
+    font-weight: 300
+    text-align: center
+    color: var(--dark-color)
+    //-webkit-text-stroke: 1px var(--primary-color)
+    //text-shadow: 10px 5px rgba(0,0,0,0.22)
+    margin: 0px 0px 10px
+  .loader
+    width: 260px
+    height: 5px
+    border: 1px solid var(--dark-color)
+    overflow: hidden
+    margin: auto
+    span
+      display: block
+      width: 40%
+      height: 100%
+      background: var(--dark-color)
+      animation: loaderAnimation 2s  infinite cubic-bezier(0.08, 0.54, 0.24, 1.02)

@@ -1,0 +1,30 @@
+---
+layout: single-portfolio
+place: 5
+name: Landing page for Application
+thumbnail: time-tracker-website.png
+tag: UI/UX Design/Front-End Development
+project-host: https://johnofficial.github.io/beproductive-site/
+description: Animation and Parallax effects rich Landing page for app presentation.
+---
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12 top-gap">
+      <strong class="project-tag">{{page.tag}}</strong>
+      <h3 class="project-title">{{page.name}}</h3>
+      {% if page.project-host %}
+      <a href="{{page.project-host}}" target="_blank" class="btn-link open-project">Visit site</a>
+      {% endif %}
+
+      <p>Animation and Parallax effects rich Landing page for app presentation.</p>
+    </div>
+    <div class="col-8 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/time-tracker-website/1.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+    <div class="col-4 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/time-tracker-website/1m.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,30 @@
+---
+layout: single-portfolio
+place: 999
+name: Coffee Shop Website Template
+thumbnail: coffee-shop-website.png
+tag: UI/UX Design
+project-host:
+description: One page template for Coffee shops and Restaurants.
+---
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12 top-gap">
+      <strong class="project-tag">{{page.tag}}</strong>
+      <h3 class="project-title">{{page.name}}</h3>
+      {% if page.project-host %}
+        <a href="{{page.project-host}}" target="_blank" class="btn-link open-project">Visit site</a>
+      {% endif %}
+
+     <p>One page template for Coffee shops and Restaurants.</p>
+    </div>
+    <div class="col-md-12 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/coffee-shop-website/1.png" class="img-fluid" alt="{{site.title}}">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/coffee-shop-website/2.png" class="img-fluid" alt="{{site.title}}">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/coffee-shop-website/3.png" class="img-fluid" alt="{{site.title}}">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/coffee-shop-website/4.png" class="img-fluid" alt="{{site.title}}">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/coffee-shop-website/5.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+  </div>
+</div>

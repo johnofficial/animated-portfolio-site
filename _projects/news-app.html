@@ -1,0 +1,33 @@
+---
+layout: single-portfolio
+place: 0
+name: News App for Television
+thumbnail: news-app.png
+tag: UI/UX Design
+project-host: https://play.google.com/store/apps/details?id=com.sattelevizija.sattv
+description: The app will show news for Local Television. App is Designed in Adobe Illustrator and I followed Material Design principles.
+---
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12 top-gap">
+      <strong class="project-tag">{{page.tag}}</strong>
+      <h3 class="project-title">{{page.name}}</h3>
+      {% if page.project-host %}
+      <a href="{{page.project-host}}" target="_blank" class="btn-link open-project">Visit site</a>
+      {% endif %}
+
+      <p>The app will show news for Local Television. App is Designed in Adobe Illustrator and I followed Material Design principles.</p>
+    </div>
+    <div class="col-sm-4 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/news-app/1.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+    <div class="col-sm-4 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/news-app/2.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+    <div class="col-sm-4 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/news-app/3.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+
+  </div>
+</div>

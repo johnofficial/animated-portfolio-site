@@ -1,0 +1,41 @@
+---
+layout: single-portfolio
+place: 7
+name: Portfolio Site
+thumbnail: previous-portfolio.png
+tag: UI/UX Design/Front-End Development
+project-host:
+description: This is mine previous portfolio. I designed it in Adobe Xd and for development, I used Angular 2 Framework.
+---
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12 top-gap">
+      <strong class="project-tag">{{page.tag}}</strong>
+      <h3 class="project-title">{{page.name}}</h3>
+      {% if page.project-host %}
+        <a href="{{page.project-host}}" target="_blank" class="btn-link open-project">Visit site</a>
+      {% endif %}
+
+     <p>This is mine previous portfolio. I designed it in Adobe Xd and for development, I used Angular 2 Framework.</p>
+    </div>
+    <div class="col-md-6 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/previous-portfolio/1.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+    <div class="col-md-6 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/previous-portfolio/2.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+    <div class="col-md-12 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/previous-portfolio/3.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+    <div class="col-sm-4 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/previous-portfolio/1m.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+    <div class="col-sm-4 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/previous-portfolio/2m.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+    <div class="col-sm-4 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/previous-portfolio/3m.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+  </div>
+</div>

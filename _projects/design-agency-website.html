@@ -1,0 +1,29 @@
+---
+layout: single-portfolio
+place: 3
+name: Site for Design Agency (Based in Serbia)
+thumbnail: design-agency-website.png
+tag: UI/UX Design/Front-End Development
+project-host: https://novis.rs/
+description: Small site with Home and Contact page for a group of friends who started Designing sites for Serbia market.
+---
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12 top-gap">
+      <strong class="project-tag">{{page.tag}}</strong>
+      <h3 class="project-title">{{page.name}}</h3>
+      {% if page.project-host %}
+        <a href="{{page.project-host}}" target="_blank" class="btn-link open-project">Visit site</a>
+      {% endif %}
+
+     <p>Small site with Home and Contact page for a group of friends who started Designing sites for Serbia market.</p>
+    </div>
+    <div class="col-md-8 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/design-agency-website/1.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+    <div class="col-md-4 top-gap">
+      <img src="{{site.baseurl}}/assets/img/portfolio-images/design-agency-website/1m.png" class="img-fluid" alt="{{site.title}}">
+    </div>
+  </div>
+</div>

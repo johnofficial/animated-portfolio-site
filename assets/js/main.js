@@ -1,3 +1,4 @@
+// TODO: Store in local storage if user is first time on site to prolong loader time.
 $(window).on("load", function() {
     setTimeout(function () {
         $(".loader-container").css({
@@ -8,7 +9,9 @@ $(window).on("load", function() {
     }, 1000);
 
 });
-
+function goBack() {
+    window.history.back();
+}
 $(function() {
 	window.scrollBy(0, -1);
 	mobileMenu();
@@ -21,7 +24,7 @@ function changePageAnimation() {
 	$("a[href]").not( "[target='_blank']" ).on("click", function (event) {
 		event.preventDefault();
 		var clickedLink = $(this).attr("href");
-		$(".main-container").addClass("change-page");
+		$(".main-container, .portfolio").addClass("change-page");
 		setTimeout(function(){window.location.href = clickedLink;}, 1000);
 
 
